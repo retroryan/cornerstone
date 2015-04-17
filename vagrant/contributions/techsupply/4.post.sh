@@ -21,13 +21,13 @@ done
 SINGLE_SEED="${SEEDS%%,*}"
 cqlsh $SINGLE_SEED -f /cornerstone/cql/contributions/techsupply/techsupply.cql
 
-#/cornerstone/scripts/contributions/techsupply/1.seed_zipcode_data/1.zipcodes-to-cassandra.py
+/cornerstone/scripts/contributions/techsupply/1.seed_zipcode_data/1.zipcodes-to-cassandra.py
 
 /cornerstone/scripts/contributions/techsupply/2.seed_retail_data/1.download-data.sh
 /cornerstone/scripts/contributions/techsupply/2.seed_retail_data/2.data-to-cassandra.py
 
 /cornerstone/scripts/contributions/techsupply/3.scan_data/1.extract-ids.py
-#/cornerstone/scripts/contributions/techsupply/3.scan_data/2.extract-zipcodes.py
+/cornerstone/scripts/contributions/techsupply/3.scan_data/2.extract-zipcodes.py
 /cornerstone/scripts/contributions/techsupply/3.scan_data/3.start-metagener.sh
 sleep 20
 /cornerstone/scripts/contributions/techsupply/3.scan_data/4.metagener-to-cassandra-stores-employees.py
