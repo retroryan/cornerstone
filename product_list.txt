@@ -1,0 +1,202 @@
+CREATE TABLE IF NOT EXISTS retail.products (
+    prod_id uuid,
+    name text,
+    model text,
+    sku text,
+    descr text,
+    price decimal,
+    on_sale boolean,
+    PRIMARY KEY ((prod_id, name))
+);
+
+
+CREATE TABLE IF NOT EXISTS retail.orders_by_store (
+    store text,
+    prod_id uuid,
+    trans_date timestamp,
+    trans_id uuid,
+    quantity int,
+    aggr_price,
+    name text,
+    model text,
+    sku text,
+    descr text,
+    price decimal,
+    on_sale boolean,
+    PRIMARY KEY (store, prod_id, trans_date, trans_id)
+) WITH CLUSTERING ORDER BY (id ASC, trans_date DESC, trans_id ASC);
+
+
+
+
+
+
+Product Name:
+Model:
+SKU:
+Product Notes:
+Price:
+On_Sale: Yes/No
+
+
+Name, Model, price
+Name of product 2, model, price
+
+
+
+- Track products
+- Track products that were in flyer
+- Track in-store promotions created in real time
+
+
+
+1
+Insignia™ - 32" Class (31-1/2" Diag.) - LED - 720p - HDTV - Black
+Model: NS-32D312NA15 SKU: 6080010
+720p resolution
+60Hz refresh rate
+ENERGY STAR Certified
+$169.99
+
+2
+Samsung - 40" Class (40" Diag.) - LED - 1080p - Smart - HDTV - Black
+Model: UN40H5203AFXZA SKU: 5674002
+1080p resolution
+Clear Motion Rate 120
+Smart TV
+ENERGY STAR Certified
+$219.99
+
+3
+Samsung - Galaxy Tab 4 - 8" - 16GB - Black
+Model: SM-T330NYKAXAR SKU: 4521027
+8" touch screen with 1280 x 800 resolution
+Android 4.4 KitKat operating system
+16GB storage capacity
+Quad-core processor
+Wi-Fi
+Bluetooth 4.0 technology
+$199.99
+
+4
+DigiLand - 10.1" - 16GB - Black
+Model: DL1010Q SKU: 8610249
+10.1" 5-point capacitive touch screen with 1024 x 600 resolution
+Android 4.4 KitKat operating system
+16GB storage capacity
+Quad-core processor
+Wi-Fi
+Bluetooth
+$99.99
+
+5
+GoPro - HD Hero3: White Edition Action Camera
+Model: CHDHE-302 SKU: 6571752
+Up to 5.0MP digital still resolution; Professional 1080p 30 fps/960p 30fps/720p 60fps and more video capture; waterproof housing; wearable, mountable design; built-in Wi-Fi
+$199.99
+
+6
+GoPro - HERO HD Waterproof Action Camera
+Model: CHDHA-301 SKU: 8374023
+1080p30, 960p30 and 720p60 fps video capture; 5.0MP digital still resolution; Auto Low Light mode; SuperView; QuikCapture; integrated waterproof housing
+$129.99
+
+7
+Sony - BDPS3500 - Streaming Wi-Fi Built-In Blu-ray Player - Black
+Model: BDPS3500 SKU: 2548108
+Wi-Fi
+Netflix, YouTube, Hulu Plus and more
+99.99
+
+8
+Samsung - DVD Player with HD Upconversion - Black
+Model: DVD-C500 SKU: 9837617
+Plays DVD, DVD+R/RW, DVD-R/RW, CD, CD-R/-RW, MP3, WMA, JPEG and MPEG-4 formats; DTS and Dolby Digital decoders; EZView
+39.99
+
+9
+Madden NFL 15
+Publisher: EA SPORTS SKU: 6131561 Release Date: 08/26/2014  Platform: PlayStation 4
+Step onto the field and into the game
+59.99
+
+10
+New! Call of Duty: Advanced Warfare - Game of the Year
+Publisher: Activision SKU: 4867036 Release Date: 04/17/2015  Platform: Xbox One
+Enter a new era of warfare with advanced weapons and high-tech combat
+59.99
+
+11
+Keurig - Elite Single-Serve Brewer - Black
+Model: K45 SKU: 6775504
+Designed for use with Keurig K-Cups; 6-oz., 8-oz. and 10-oz. brew-size options; 48-oz. removable water reservoir; includes 12-count coffee and tea K-Cup variety pack
+119.99
+
+12
+Keurig - 2.0 K450 4-Cup Coffeemaker - Black/Silver
+Model: 20231 SKU: 6627124
+Color touch display; 9 brew sizes; 70-oz. illuminated reservoir; auto shutoff; favorite settings; customizable clock
+149.99
+
+13
+Insignia™ - Soundbar with Bluetooth - Black
+Model: NS-SB314 SKU: 4157006
+39W total power output; left and right channels with built-in subwoofer; Bluetooth support; single-cable connection; RCA and 3.5mm audio cables
+99.99
+
+14
+Sony - 2.1-Channel Soundbar with 100W Wireless Subwoofer - Black
+Model: HTCT370 SKU: 4420029
+300W S-Master amplifier power; wireless subwoofer; left and right full-range speaker drivers; S-Force PRO surround sound technology; Bluetooth technology; 3 HDMI inputs
+349.99
+
+15
+Samsung - 11.6" Chromebook 2 - Intel Celeron - 2GB Memory - 16GB Flash Memory - Metallic Silver
+Model: XE500C12-K01US SKU: 8851622
+Google Chrome 64-bit
+Technical details: Intel® Celeron® processor; 11.6" display; 2GB memory; 16GB eMMC flash memory
+Special features: Bluetooth; HDMI output
+Note: DVD/CD drive not included
+249.00
+
+16
+HP - 15.6" Laptop - AMD A6-Series - 4GB Memory - 1TB Hard Drive - Black Licorice
+Model: 15-g020dx SKU: 9925132
+Windows 8.1 64-bit
+Technical details: AMD A6-Series processor; 15.6" display; 4GB memory; 1TB hard drive
+Special features: HDMI output
+299.99
+
+17
+Fitbit - Flex Wireless Activity and Sleep Tracker Wristband - Black
+Model: FB401BK SKU: 8390054
+Measures steps, distance, calories burned and active minutes; monitors sleep cycle; silent alarm; LED lights; water-resistant design; rechargeable battery
+99.99
+
+18
+New! Samsung - Galaxy S6 4G LTE with 32GB Memory Cell Phone - Black Sapphire (Verizon Wireless)
+Model: PHONE 32G BLACK SKU: 4406021
+Android 5.0 Lollipop operating system
+4G LTE speed
+Wi-Fi
+5.1" Super AMOLED touch screen
+Bluetooth enabled
+199.99
+
+19
+Apple® - iPhone 6 16GB - Space Gray (Verizon Wireless)
+Model: MG5W2LL/A SKU: 7619002
+4.7-inch Retina HD display
+A8 chip with 64-bit desktop-class architecture
+New 8MP iSight camera with Focus Pixels
+Touch ID fingerprint identity sensor
+iOS and iCloud
+6.9mm thin, seamless design
+199.99
+
+
+20
+Garmin - nüvi 42LM Essential Series - 4.3" - Lifetime Map Updates - Portable GPS - Black
+Model: 010-01114-01 SKU: 7534182
+Preloaded base map coverage of the lower 48 U.S. states, Hawaii, Puerto Rico, U.S. Virgin Islands, Cayman Islands and Bahamas; 4.3" touch-screen display; text-to-speech technology
+90.99
