@@ -201,7 +201,11 @@ CREATE TABLE IF NOT EXISTS retail.receipts (
     )
 );
 
-CREATE TABLE IF NOT EXISTS retail.products_new (
+CREATE KEYSPACE IF NOT EXISTS retail-new
+WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
+
+
+CREATE TABLE IF NOT EXISTS retail-new.products_new (
     product_id text,
     title text,
     brand text,
@@ -213,7 +217,32 @@ CREATE TABLE IF NOT EXISTS retail.products_new (
     PRIMARY KEY ((prod_id))
 );
 
-CREATE TABLE IF NOT EXISTS retail.orders_by_store (
+INSERT INTO retail-new.products_new (product_id, title, brand, model, sku, descr, price, on_sale)
+VALUES
+(  1,
+  'Insignia™ - 32" Class (31-1/2" Diag.) - LED - 720p - HDTV - Black',
+  'Insignia'
+  'NS-32D312NA15',
+  '6080010',
+  '720p resolution
+  60Hz refresh rate
+  ENERGY STAR Certified',
+  '169.99',
+  0),
+  (  2,
+    'Samsung - 40" Class (40" Diag.) - LED - 1080p - Smart - HDTV - Black',
+    'Samsung',
+    'UN40H5203AFXZA',
+    '5674002',
+    '1080p resolution
+    Clear Motion Rate 120
+    Smart TV
+    ENERGY STAR Certified',
+    '219.99',
+    0) ;
+
+
+CREATE TABLE IF NOT EXISTS retail-new.orders_by_store (
     store_id int,
     product_id list,
     trans_date timestamp,
