@@ -201,6 +201,34 @@ CREATE TABLE IF NOT EXISTS retail.receipts (
     )
 );
 
+CREATE TABLE IF NOT EXISTS retail.products_new (
+    product_id text,
+    title text,
+    brand text,
+    model text,
+    sku text,
+    descr text,
+    price decimal,
+    on_sale boolean,
+    PRIMARY KEY ((prod_id))
+);
+
+CREATE TABLE IF NOT EXISTS retail.orders_by_store (
+    store_id int,
+    product_id list,
+    trans_date timestamp,
+    trans_id uuid,
+    quantity int,
+    aggr_price,
+    name text,
+    model text,
+    sku text,
+    descr text,
+    price decimal,
+    on_sale boolean,
+    PRIMARY KEY (store, trans_date, trans_id)
+) WITH CLUSTERING ORDER BY (prod_id ASC, trans_date DESC, trans_id ASC);
+
 
 CREATE KEYSPACE IF NOT EXISTS metagener
 WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
