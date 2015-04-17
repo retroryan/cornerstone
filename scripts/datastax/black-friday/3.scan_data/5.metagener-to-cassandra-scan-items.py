@@ -435,6 +435,7 @@ def scan_items(futures, session):
 
         # write to socket for current Spark streaming use
         tcp_socket.send(spark_streaming)
+        time.sleep(5)
 
     tcp_socket.close()
 
