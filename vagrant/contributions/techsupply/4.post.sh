@@ -33,5 +33,6 @@ sleep 20
 /cornerstone/scripts/contributions/techsupply/3.scan_data/4.metagener-to-cassandra-stores-employees.py
 
 mkdir -p /mnt/log/spark_streaming/
+#spark stream supporting
 nohup nc -l 5005 &
 nohup /cornerstone/scripts/contributions/techsupply/3.scan_data/5.metagener-to-cassandra-scan-items.py &
