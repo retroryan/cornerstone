@@ -3,7 +3,7 @@ from flask import Flask
 from Cornerstone.routes.datastax.cornerstone import rest
 from Cornerstone.routes.datastax.cornerstone.rest import rest_api
 from Cornerstone.routes.datastax.cornerstone.google_charts import gcharts_api
-from Cornerstone.routes.datastax.techsupply.route import techcupply_api
+from Cornerstone.routes.contributions.techsupply.route import techsupply_api
 
 app = Flask(__name__)
 app.config.from_pyfile('/cornerstone/web/datastax/cornerstone-python/Cornerstone/application.cfg')
